@@ -1,4 +1,4 @@
-.pokemon-list-wrappper {
+.pokemon-list-wrapper {
    margin: 2rem auto;
    display: flex;
    flex-direction: column;
@@ -20,7 +20,4 @@
    padding-top: 0.5rem;
    padding-bottom: 0.5rem;
    margin-left: 1rem;
-   font-size: 15px;
-   margin-top: 0.5rem;
-   cursor: pointer;
 }
