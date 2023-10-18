@@ -38,6 +38,7 @@ function PokemonList(){
             types: pokemon.types  
         }
        });
+       console.log(res);
        setPokemonListState((state)=> ({... state, 
         pokemonList: pokemonResults, 
         isLoading: false}));
@@ -50,7 +51,7 @@ function PokemonList(){
     return (
         <div className="pokemon-list-wrappper">
             <div className="pokemon-wrapper">
-            {(pokemonListState.isLoading) ? 'Loading....' : 
+            {(pokemonListState.isloading) ? 'Loading....' : 
               pokemonListState.pokemonList.map((p) => <Pokemon name={p.name} image= {p.image} key = {p.id} id={p.id}/>)
             }
             </div>
