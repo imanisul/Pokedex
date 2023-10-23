@@ -2,10 +2,11 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import './PokemonDetails.css';
-function PokemonDetails(){
+import usePokemonDetails from "../../hooks/usePokemonDetials";
+function PokemonDetails({pokemonName}){
 
     const {id} = useParams();
-    const[pokemon, setPokemon] = useState({});
+    const[pokemon] = usePokemonDetails(id, pokemonName)
     async function downloadPokemons(){
         const response = await axios.get(`https://pokeapi.co/api/v2/pokemon/${id}`);
         setPokemon({

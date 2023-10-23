@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 function usePokemonDetails(id, pokemonName) {
     const [pokemon, setPokemon] = useState({});
     async function downloadPokemon() {
-        try {
+         try {
             let response;
             if(pokemonName) {
                 response = await axios.get(`https://pokeapi.co/api/v2/pokemon/${pokemonName}`);
@@ -21,9 +21,10 @@ function usePokemonDetails(id, pokemonName) {
                 similarPokemons: pokemonOfSameTypes.data.pokemon
             });
             setPokemonListState({...pokemonListState, type: response.data.types ? response.data.types[0].type.name : '' })
-        } catch(error) {
-            console.log('something went')
-        }
+         } catch (error) {
+            console.log('something went wrong');
+         }
+        
     } 
     const [pokemonListState, setPokemonListState] = useState({});
 
